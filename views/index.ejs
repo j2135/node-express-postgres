@@ -25,11 +25,22 @@
           </form>
         </div>
         <div class="col-md-6">
-          <ul>
-            <% for(let todo of todos){ %>
-              <li><span><%= todo.content %></span></li>
-            <% } %>
-          </ul>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>タスク</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% todos.forEach((todo, index) => { %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= todo.content %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
